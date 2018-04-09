@@ -1,0 +1,516 @@
+#include <stdio.h>
+
+enum aw9110_reg_addr {
+    AW9110_GPIO_INPUT_A = 0,
+    AW9110_GPIO_INPUT_B,
+    AW9110_GPIO_OUTPUT_A,
+    AW9110_GPIO_OUTPUT_B,
+    AW9110_GPIO_CFG_A,
+    AW9110_GPIO_CFG_B,
+    AW9110_GPIO_INT_A,
+    AW9110_GPIO_INT_B,
+    AW9110_CTL = 0x11,
+    AW9110_GPMD_A,
+    AW9110_GPMD_B,
+    AW9110_EN_BRE,
+    AW9110_FADE_TMR,
+    AW9110_FULL_TMR,
+    AW9110_DLY0_BRE,
+    AW9110_DLY1_BRE,
+    AW9110_DLY2_BRE,
+    AW9110_DLY3_BRE,
+    AW9110_DLY4_BRE,
+    AW9110_DLY5_BRE,
+    AW9110_DIM0 = 0x20,
+    AW9110_DIM1,
+    AW9110_DIM2,
+    AW9110_DIM3,
+    AW9110_DIM4,
+    AW9110_DIM5,
+    AW9110_DIM6,
+    AW9110_DIM7,
+    AW9110_DIM8,
+    AW9110_DIM9,
+    AW9110_RESET = 0x7f,
+    AW9110_REG_MAX
+};
+
+#define GPIO_A_MAX_INDEX 9
+#define GPIO_B_MAX_INDEX 3
+
+/*read pin status for Master*/
+struct gpio_input_a_t {
+    const unsigned char addr; /*0x00*/
+    union reg_gpio_input_a_t {
+        unsigned char raw;
+        struct bit_gpio_input_a_t {
+            unsigned char out_4: 1;
+            unsigned char out_5: 1;
+            unsigned char out_6: 1;
+            unsigned char out_7: 1;
+            unsigned char out_8: 1;
+            unsigned char out_9: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*read pin status for Master*/
+struct gpio_input_b_t {
+    const unsigned char addr; /*0x01*/
+    union reg_gpio_input_b_t {
+        unsigned char raw;
+        struct bit_gpio_input_b_t {
+            unsigned char out_0: 1;
+            unsigned char out_1: 1;
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char rsvt : 4;
+        } bit_map;
+    } reg;
+};
+
+/*write pin status for Master*/
+struct gpio_output_a_t {
+    const unsigned char addr; /*0x02*/
+    union reg_gpio_output_a_t {
+        unsigned char raw;
+        struct bit_gpio_output_a_t {
+            unsigned char out_4: 1; /* out4/out5:1)GPMD_Ax=1,driver to high/low level*/
+            unsigned char out_5: 1; /* out4/out5:2)GPMD_Ax=0,EN_BRE.bit=1,smart fade*/
+            unsigned char out_6: 1;
+            unsigned char out_7: 1;
+            unsigned char out_8: 1;
+            unsigned char out_9: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*write pin status for Master*/
+struct gpio_output_b_t {
+    const unsigned char addr; /*0x03*/
+    union reg_gpio_output_b_t {
+        unsigned char raw;
+        struct bit_gpio_output_b_t {
+            unsigned char out_0: 1; /* out0-3:1)GPMD_Ax=1,driver to high/low level*/
+            unsigned char out_1: 1; /* out0-3:2)GPMD_Ax=0,EN_BRE.bit=1,smart fade*/
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char rsvt : 4;
+        } bit_map;
+    } reg;
+};
+
+/*output(0)/input(1) selection, or smart-fade(0)/blink(1) selction
+ *default(0):output,smart-fade
+*/
+struct gpio_cfg_a_t {
+    const unsigned char addr; /*0x04*/
+    union reg_gpio_cfg_a_t {
+        unsigned char raw;
+        struct bit_gpio_cfg_a_t {
+            unsigned char out_4: 1; /* out4/out5:1)GPMD_Ax=1,output/input*/
+            unsigned char out_5: 1; /* out4/out5:2)GPMD_Ax=0,EN_BRE.bit=1,smart/blink*/
+            unsigned char out_6: 1;
+            unsigned char out_7: 1;
+            unsigned char out_8: 1;
+            unsigned char out_9: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*output(0)/input(1) selection, or smart-fade(0)/blink(1) selction
+ *default(0):output,smart-fade
+*/
+struct gpio_cfg_b_t {
+    const unsigned char addr; /*0x05*/
+    union reg_gpio_cfg_b_t {
+        unsigned char raw;
+        struct bit_gpio_cfg_b_t {
+            unsigned char out_0: 1; /* out0-3:1)GPMD_Ax=1,output/input*/
+            unsigned char out_1: 1; /* out0-3:2)GPMD_Ax=0,EN_BRE.bit=1,smart/blink*/
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char rsvt : 4;
+        } bit_map;
+    } reg;
+};
+
+/*interrupt enable/disable,default(0):enable*/
+struct gpio_int_a_t {
+    const unsigned char addr; /*0x06*/
+    union reg_gpio_int_a_t {
+        unsigned char raw;
+        struct bit_gpio_int_a_t {
+            unsigned char out_4: 1;
+            unsigned char out_5: 1;
+            unsigned char out_6: 1;
+            unsigned char out_7: 1;
+            unsigned char out_8: 1;
+            unsigned char out_9: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*interrupt enable/disable,default(0):enable*/
+struct gpio_int_b_t {
+    const unsigned char addr;/*0x07*/
+    union reg_gpio_int_b_t {
+        unsigned char raw;
+        struct bit_gpio_int_b_t {
+            unsigned char out_0: 1;
+            unsigned char out_1: 1;
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char rsvt : 4;
+        } bit_map;
+    } reg;
+};
+
+/*ctl reg*/
+struct ctl_t {
+    const unsigned char addr;/*0x11*/
+    union reg_ctl_t {
+        unsigned char raw;
+        struct bit_ctl_t {
+            unsigned char light_level: 2; /*default(00):00(40ma),01(30ma),10(20ma),11(10ma)*/
+            unsigned char rsvt_23: 2;
+            unsigned char drive_mode: 1; /*default(0):0(open-drain),1(push-pull)*/
+            unsigned char rsvt_56: 2;
+            unsigned char go : 1; /*blink mode,write 1 start*/
+        } bit_map;
+    } reg;
+};
+
+/*default(1):gpio(1) or led ctl(0)*/
+struct gpmd_a_t {
+    const unsigned char addr; /*0x12*/
+    union reg_gpmd_a_t {
+        unsigned char raw;
+        struct bit_gpmd_a_t {
+            unsigned char out_4: 1;
+            unsigned char out_5: 1;
+            unsigned char out_6: 1;
+            unsigned char out_7: 1;
+            unsigned char out_8: 1;
+            unsigned char out_9: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*default(1):gpio(1) or led ctl(0)*/
+struct gpmd_b_t {
+    const unsigned char addr;/*0x13*/
+    union reg_gpmd_b_t {
+        unsigned char raw;
+        struct bit_gpmd_b_t {
+            unsigned char out_0: 1;
+            unsigned char out_1: 1;
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char rsvt : 4;
+        } bit_map;
+    } reg;
+};
+
+/*breath enable,default(0):enable(1) or disable(0)*/
+struct en_bre_t {
+    const unsigned char addr;/*0x14*/
+    union reg_en_bre_t {
+        unsigned char raw;
+        struct bit_en_bre_t {
+            unsigned char out_0: 1;
+            unsigned char out_1: 1;
+            unsigned char out_2: 1;
+            unsigned char out_3: 1;
+            unsigned char out_4: 1;
+            unsigned char out_5: 1;
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*fade-on/off time value,default:0ms*/
+struct fade_tmr_t {
+    const unsigned char addr;/*0x15*/
+    union reg_fade_tmr_t {
+        unsigned char raw;
+        struct bit_fade_tmr_t {
+            unsigned char fd_on: 3; /*000/110/111:0ms,001:256,010:512,011:1024,100:2048,101:4096*/
+            unsigned char fd_off: 3; /*000/110/111:0ms,001:256,010:512,011:1024,100:2048,101:4096*/
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+
+/*blink mode,off/on time value,default:0ms*/
+struct full_tmr_t {
+    const unsigned char addr;/*0x16*/
+    union reg_full_tmr_t {
+        unsigned char raw;
+        struct bit_full_tmr_t {
+            unsigned char ful_on: 3; /*000:0ms,001:256,010:512,011:1024,100:2048,101:4096,110:8192,111:16384*/
+            unsigned char ful_off: 3; /*000:0ms,001:256,010:512,011:1024,100:2048,101:4096,110:8192,111:16384*/
+            unsigned char rsvt : 2;
+        } bit_map;
+    } reg;
+};
+
+/*blink mode,go after dly time value,default(0):0ms*/
+struct dly_bre_0_5_t {
+    const unsigned char addr;/*0x17 - 0x1c*/
+    union reg_dly_bre_0_5_t {
+        unsigned char raw;
+        struct bit_dly_bre_0_5_t {
+            unsigned char dly_time;/*256ms per 1 unit*/
+        } bit_map;
+    } reg;
+};
+
+/*sublight level,work on with ctl_t reg, I = ctl_t.ligth_level*dim_0_9.dim_level*/
+struct dim_0_9_t {
+    const unsigned char addr;/*0x20 - 0x29*/
+    union reg_dim_0_9_t {
+        unsigned char raw;
+        struct bit_dim_0_9_t {
+            unsigned char dim_level;
+        } bit_map;
+    } reg;
+};
+
+/*software reset*/
+struct reset_t {
+    const unsigned char addr;/*0x7f*/
+    union reg_reset_t {
+        unsigned char raw;
+        struct bit_reset_t {
+            unsigned char reset;
+        } bit_map;
+    } reg;
+};
+
+typedef struct aw9110_reg {
+    struct gpio_input_a_t gpio_input_a;
+    struct gpio_input_b_t gpio_input_b;
+    struct gpio_output_a_t gpio_output_a;
+    struct gpio_output_b_t gpio_output_b;
+    struct gpio_cfg_a_t gpio_cfg_a;
+    struct gpio_cfg_b_t gpio_cfg_b;
+    struct gpio_int_a_t gpio_int_a;
+    struct gpio_int_b_t gpio_int_b;
+    struct ctl_t ctl;
+    struct gpmd_a_t gpmd_a;
+    struct gpmd_b_t gpmd_b;
+    struct en_bre_t en_bre;
+    struct fade_tmr_t fade_tmr;
+    struct full_tmr_t full_tmr;
+    struct dly_bre_0_5_t dly_bre_0;
+    struct dly_bre_0_5_t dly_bre_1;
+    struct dly_bre_0_5_t dly_bre_2;
+    struct dly_bre_0_5_t dly_bre_3;
+    struct dly_bre_0_5_t dly_bre_4;
+    struct dly_bre_0_5_t dly_bre_5;
+    struct dim_0_9_t dim_0;
+    struct dim_0_9_t dim_1;
+    struct dim_0_9_t dim_2;
+    struct dim_0_9_t dim_3;
+    struct dim_0_9_t dim_4;
+    struct dim_0_9_t dim_5;
+    struct dim_0_9_t dim_6;
+    struct dim_0_9_t dim_7;
+    struct dim_0_9_t dim_8;
+    struct dim_0_9_t dim_9;
+    struct reset_t reset;
+} aw9110_reg_t;
+
+aw9110_reg_t aw9110_reg = {
+    .gpio_input_a = {
+        .addr = AW9110_GPIO_INPUT_A,
+    },
+    .gpio_input_b = {
+        .addr = AW9110_GPIO_INPUT_B,
+    },
+    .gpio_output_a = {
+        .addr = AW9110_GPIO_OUTPUT_A,
+    },
+    .gpio_output_b = {
+        .addr = AW9110_GPIO_OUTPUT_B,
+    },
+    .gpio_cfg_a = {
+        .addr = AW9110_GPIO_CFG_A,
+    },
+    .gpio_cfg_b = {
+        .addr = AW9110_GPIO_CFG_B,
+    },
+    .gpio_int_a = {
+        .addr = AW9110_GPIO_INT_A,
+    },
+    .gpio_int_b = {
+        .addr = AW9110_GPIO_INT_B,
+    },
+    .ctl = {
+        .addr = AW9110_GPIO_INT_A,
+    },
+    .gpmd_a = {
+        .addr = AW9110_GPMD_A,
+    },
+    .gpmd_b = {
+        .addr = AW9110_GPMD_B,
+    },
+    .en_bre = {
+        .addr = AW9110_EN_BRE,
+    },
+    .fade_tmr = {
+        .addr = AW9110_FADE_TMR,
+    },
+    .full_tmr = {
+        .addr = AW9110_FULL_TMR,
+    },
+    .dly_bre_0 = {
+        .addr = AW9110_DLY0_BRE,
+    },
+    .dly_bre_1 = {
+        .addr = AW9110_DLY1_BRE,
+    },
+    .dly_bre_2 = {
+        .addr = AW9110_DLY2_BRE,
+    },
+    .dly_bre_3 = {
+        .addr = AW9110_DLY3_BRE,
+    },
+    .dly_bre_4 = {
+        .addr = AW9110_DLY4_BRE,
+    },
+    .dly_bre_5 = {
+        .addr = AW9110_DLY5_BRE,
+    },
+    .dim_0 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_1 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_2 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_3 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_4 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_5 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_6 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_7 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_8 = {
+        .addr = AW9110_DIM0,
+    },
+    .dim_9 = {
+        .addr = AW9110_DIM0,
+    },
+    .reset = {
+        .addr = AW9110_RESET,
+    }
+};
+
+#define get_bit(gpio,index) (gpio.reg.bit_map.out_##index)
+
+int write ( int fd, unsigned char* buf, unsigned char count )
+{
+    return count;
+}
+
+int read ( int fd, unsigned char* buf, unsigned char count )
+{
+    buf[0] = aw9110_reg.gpio_input_a.reg.raw;
+    return count;
+}
+
+#define SET_BIT(value, bit) (value |= (1 << bit))
+#define CLR_BIT(value, bit) (value &= !(1 << bit))
+#define GET_BIT(value, bit) ((value >> bit) & 0x01)
+
+int read_gpio ( unsigned char index, unsigned char* level )
+{
+    unsigned char tmp[2] = {0};
+    if ( index > GPIO_B_MAX_INDEX ) {
+        index = index - GPIO_B_MAX_INDEX - 1;
+        tmp[1] = aw9110_reg.gpio_input_a.addr;
+        write ( 1, tmp, 1 );
+        read ( 1, &aw9110_reg.gpio_input_a.reg.raw, 1 );
+        *level = GET_BIT ( aw9110_reg.gpio_input_a.reg.raw, index );
+    } else {
+        tmp[1] = aw9110_reg.gpio_input_b.addr;
+        write ( 1, tmp, 1 );
+        read ( 1, &aw9110_reg.gpio_input_b.reg.raw, 1 );
+        *level = GET_BIT ( aw9110_reg.gpio_input_b.reg.raw, index );
+    }
+    return 0;
+}
+
+void led_on ( int index )
+{
+    unsigned char i = 0;
+    unsigned char a_need = 0;
+    unsigned char b_need = 0;
+    unsigned char tmp[3] = {0};
+    unsigned char len = 0;
+
+    for ( i = 0; i <= GPIO_A_MAX_INDEX; i++ ) {
+        if ( i > GPIO_B_MAX_INDEX ) {
+            if ( GET_BIT ( index, i ) ) {
+                SET_BIT ( aw9110_reg.gpio_input_a.reg.raw, i - GPIO_B_MAX_INDEX - 1 );
+                a_need = 1;
+            }
+        } else {
+            if ( GET_BIT ( index, i ) ) {
+                SET_BIT ( aw9110_reg.gpio_input_b.reg.raw, i );
+                b_need = 1;
+            }
+        }
+    }
+    if ( b_need & a_need ) {
+        tmp[0] = aw9110_reg.gpio_input_a.addr;
+        tmp[1] = aw9110_reg.gpio_input_a.reg.raw;
+        tmp[2] = aw9110_reg.gpio_input_a.reg.raw;
+        len = 3;
+    } else if ( a_need ) {
+        tmp[0] = aw9110_reg.gpio_input_a.addr;
+        tmp[1] = aw9110_reg.gpio_input_a.reg.raw;
+        len = 2;
+    } else {
+        tmp[0] = aw9110_reg.gpio_input_b.addr;
+        tmp[1] = aw9110_reg.gpio_input_b.reg.raw;
+        len = 2;
+    }
+    write ( 1, tmp, len );
+}
+
+/*open blink led*/
+//int open_blink_led(unsigned char index, )
+
+struct hello_t {
+    unsigned char hello[2];
+    int nihao;
+};
+
+struct hello_t hello = {
+    .hello = {1, 2},
+    .nihao = 3
+};
+
+int main ( void )
+{printf ( "write something what you want\n" );
+    return 0;
+}

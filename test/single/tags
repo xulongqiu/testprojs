@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Mylistener	abstructClass.cpp	/^    class Mylistener: public listener {$/;"	c	namespace:android	file:	inherits:listener
+__USE_GNU	cpu.c	7;"	d	file:
+android	abstructClass.cpp	/^namespace android{$/;"	n	file:
+android::Mylistener	abstructClass.cpp	/^    class Mylistener: public listener {$/;"	c	namespace:android	file:	inherits:listener
+android::Mylistener::battery_changed	abstructClass.cpp	/^            void battery_changed(int value){$/;"	f	class:android::Mylistener	access:public	signature:(int value)
+android::listener	abstructClass.cpp	/^    class listener {$/;"	c	namespace:android	file:
+android::listener::battery_changed	abstructClass.cpp	/^            virtual void battery_changed(int value);$/;"	p	class:android::listener	file:	access:public	signature:(int value)
+android::producer	abstructClass.cpp	/^    class producer{$/;"	c	namespace:android	file:
+android::producer::power_changed_notify	abstructClass.cpp	/^            void power_changed_notify(listener& listener){$/;"	f	class:android::producer	access:public	signature:(listener& listener)
+battery_changed	abstructClass.cpp	/^            virtual void battery_changed(int value);$/;"	p	class:android::listener	file:	access:public	signature:(int value)
+battery_changed	abstructClass.cpp	/^            void battery_changed(int value){$/;"	f	class:android::Mylistener	access:public	signature:(int value)
+console_print	print.c	12;"	d	file:
+fun	boost.cpp	/^int fun(int x, int y){return x + y;}$/;"	f	signature:(int x, int y)
+get_thread_policy	priority.c	/^static int get_thread_policy( pthread_attr_t &attr )$/;"	f	file:	signature:( pthread_attr_t &attr )
+get_thread_priority	priority.c	/^static int get_thread_priority( pthread_attr_t &attr )$/;"	f	file:	signature:( pthread_attr_t &attr )
+listener	abstructClass.cpp	/^    class listener {$/;"	c	namespace:android	file:
+main	abstructClass.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	boost.cpp	/^int main(void)$/;"	f	signature:(void)
+main	cpu.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	pipe.c	/^int main(void){$/;"	f	signature:(void)
+main	print.c	/^int main(void)$/;"	f	signature:(void)
+main	priority.c	/^int main( void )$/;"	f	signature:( void )
+main	test.c	/^int main(void)$/;"	f	signature:(void)
+main	timer.c	/^int main(void){$/;"	f	signature:(void)
+milliseconds_sleep	timer.c	/^void milliseconds_sleep(unsigned long mSec){$/;"	f	signature:(unsigned long mSec)
+power_changed_notify	abstructClass.cpp	/^            void power_changed_notify(listener& listener){$/;"	f	class:android::producer	access:public	signature:(listener& listener)
+print	print.c	/^void print(char* fmt, ...)$/;"	f	signature:(char* fmt, ...)
+printbin	print.c	/^static void printbin(int bin)$/;"	f	file:	signature:(int bin)
+printch	print.c	/^static void printch(char ch)$/;"	f	file:	signature:(char ch)
+printdec	print.c	/^static void printdec(int dec)$/;"	f	file:	signature:(int dec)
+printflt	print.c	/^static void printflt(double flt)$/;"	f	file:	signature:(double flt)
+printhex	print.c	/^static void printhex(int hex)$/;"	f	file:	signature:(int hex)
+printstr	print.c	/^static void printstr(char* str)$/;"	f	file:	signature:(char* str)
+producer	abstructClass.cpp	/^    class producer{$/;"	c	namespace:android	file:
+set_thread_policy	priority.c	/^static void set_thread_policy( pthread_attr_t &attr,  int policy )$/;"	f	file:	signature:( pthread_attr_t &attr, int policy )
+show_thread_priority	priority.c	/^static void show_thread_priority( pthread_attr_t &attr, int policy )$/;"	f	file:	signature:( pthread_attr_t &attr, int policy )
+std	priority.c	/^using namespace std;$/;"	v
+thread	timer.c	/^void thread(void)$/;"	f	signature:(void)

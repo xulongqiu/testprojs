@@ -1,0 +1,10 @@
+{
+	"iRet": 0,
+	"sError": "",
+	"vecCalendarInfo": [{
+		"bAlarmOff": false,
+		"eAlarmOperation": 3,
+		"iAlarmType": 0,
+		"lAlarmID": 0
+	}]
+}

@@ -1,0 +1,198 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+G_AUDIO_SOURCE_TYPE_CNT	policy.h	92;"	d
+IPolicyClient	policy_client.h	/^class IPolicyClient$/;"	c	namespace:test_libratone
+PS_TAG	policy_service.cpp	22;"	d	file:
+PolicyClient	policy_client.cpp	/^PolicyClient::PolicyClient(const char* name, eAudioSourceType_t source)$/;"	f	class:test_libratone::PolicyClient	signature:(const char* name, eAudioSourceType_t source)
+PolicyClient	policy_client.h	/^    PolicyClient(const char* name, eAudioSourceType_t source);$/;"	p	class:test_libratone::PolicyClient	access:public	signature:(const char* name, eAudioSourceType_t source)
+PolicyClient	policy_client.h	/^class PolicyClient: public IPolicyClient$/;"	c	namespace:test_libratone	inherits:IPolicyClient
+PolicyService	policy_service.cpp	/^PolicyService::PolicyService()$/;"	f	class:test_libratone::PolicyService	signature:()
+PolicyService	policy_service.h	/^    PolicyService();$/;"	p	class:test_libratone::PolicyService	access:public	signature:()
+PolicyService	policy_service.h	/^class PolicyService$/;"	c	namespace:test_libratone
+__POLICY_CLIENT_H__	policy_client.h	8;"	d
+__POLICY_H__	policy.h	8;"	d
+__POLICY_SERVICE_H__	policy_service.h	8;"	d
+__anon6::allow	policy.h	/^    uint32_t allow;$/;"	m	struct:__anon6	access:public
+__anon6::backVolumeLvl	policy.h	/^    eBackgroundVolume_t backVolumeLvl;$/;"	m	struct:__anon6	access:public
+__anon6::backgroundSelf	policy.h	/^    uint32_t backgroundSelf;$/;"	m	struct:__anon6	access:public
+__anon6::lvl	policy.h	/^    eAudioSourcePriority_t lvl;$/;"	m	struct:__anon6	access:public
+__anon6::notAllow	policy.h	/^    uint32_t notAllow;$/;"	m	struct:__anon6	access:public
+__anon6::notAllowSelf	policy.h	/^    uint32_t notAllowSelf;$/;"	m	struct:__anon6	access:public
+__anon6::self	policy.h	/^    eAudioSourceType_t self;$/;"	m	struct:__anon6	access:public
+__anon6::suspend	policy.h	/^    uint32_t suspend;$/;"	m	struct:__anon6	access:public
+__anon6::suspendSelf	policy.h	/^    uint32_t suspendSelf;$/;"	m	struct:__anon6	access:public
+allow	policy.h	/^    uint32_t allow;$/;"	m	struct:__anon6	access:public
+backVolumeLvl	policy.h	/^    eBackgroundVolume_t backVolumeLvl;$/;"	m	struct:__anon6	access:public
+backgroundSelf	policy.h	/^    uint32_t backgroundSelf;$/;"	m	struct:__anon6	access:public
+checkAddClient	policy_service.cpp	/^int PolicyService::checkAddClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+checkAddClient	policy_service.h	/^    int checkAddClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+checkRemoveClient	policy_service.cpp	/^int PolicyService::checkRemoveClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+checkRemoveClient	policy_service.h	/^    int checkRemoveClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+compareSources	policy_service.cpp	/^bool PolicyService::compareSources(PolicyClient* foreground, PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* foreground, PolicyClient* client)
+compareSources	policy_service.h	/^    int compareSources(PolicyClient* foreground, PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* foreground, PolicyClient* client)
+eAudioSourcePriorityFive	policy.h	/^    eAudioSourcePriorityFive,$/;"	e	enum:__anon4
+eAudioSourcePriorityFour	policy.h	/^    eAudioSourcePriorityFour,$/;"	e	enum:__anon4
+eAudioSourcePriorityMax	policy.h	/^    eAudioSourcePriorityMax$/;"	e	enum:__anon4
+eAudioSourcePriorityOne	policy.h	/^    eAudioSourcePriorityOne,$/;"	e	enum:__anon4
+eAudioSourcePrioritySix	policy.h	/^    eAudioSourcePrioritySix,$/;"	e	enum:__anon4
+eAudioSourcePriorityThree	policy.h	/^    eAudioSourcePriorityThree,$/;"	e	enum:__anon4
+eAudioSourcePriorityTwo	policy.h	/^    eAudioSourcePriorityTwo,$/;"	e	enum:__anon4
+eAudioSourcePriority_t	policy.h	/^} eAudioSourcePriority_t;$/;"	t	typeref:enum:__anon4
+eAudioSourceStatus_t	policy.h	/^} eAudioSourceStatus_t;$/;"	t	typeref:enum:__anon3
+eAudioSourceTypeAll	policy.h	/^    eAudioSourceTypeAll = 0x7f,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeAlarm	policy.h	/^    eAudioSourceTypeLikeAlarm = 0x08,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeCall	policy.h	/^    eAudioSourceTypeLikeCall = 0x20,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeMusic	policy.h	/^    eAudioSourceTypeLikeMusic = 0x01,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeRingTone	policy.h	/^    eAudioSourceTypeLikeRingTone = 0x10,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeTone	policy.h	/^    eAudioSourceTypeLikeTone = 0x40,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeVrMusic	policy.h	/^    eAudioSourceTypeLikeVrMusic = 0x02,$/;"	e	enum:__anon1
+eAudioSourceTypeLikeWakeUp	policy.h	/^    eAudioSourceTypeLikeWakeUp = 0x04,$/;"	e	enum:__anon1
+eAudioSourceTypeMax	policy.h	/^    eAudioSourceTypeMax$/;"	e	enum:__anon1
+eAudioSourceTypeNull	policy.h	/^    eAudioSourceTypeNull = 0,$/;"	e	enum:__anon1
+eAudioSourceType_t	policy.h	/^} eAudioSourceType_t;$/;"	t	typeref:enum:__anon1
+eBackgroundVolumeFiveFour	policy.h	/^    eBackgroundVolumeFiveFour = 4,$/;"	e	enum:__anon5
+eBackgroundVolumeFiveOne	policy.h	/^    eBackgroundVolumeFiveOne = 1, \/\/ cur_volume -= cur_volume \/ 1$/;"	e	enum:__anon5
+eBackgroundVolumeFiveThree	policy.h	/^    eBackgroundVolumeFiveThree = 3,$/;"	e	enum:__anon5
+eBackgroundVolumeFiveTwo	policy.h	/^    eBackgroundVolumeFiveTwo = 2,$/;"	e	enum:__anon5
+eBackgroundVolumeFull	policy.h	/^    eBackgroundVolumeFull,$/;"	e	enum:__anon5
+eBackgroundVolumeZero	policy.h	/^    eBackgroundVolumeZero = 0, \/\/ cur_volume -= cur_volume * 0$/;"	e	enum:__anon5
+eBackgroundVolume_t	policy.h	/^}eBackgroundVolume_t;$/;"	t	typeref:enum:__anon5
+eRequestRetAllow	policy.h	/^    eRequestRetAllow,$/;"	e	enum:__anon2
+eRequestRetBackground	policy.h	/^    eRequestRetBackground,$/;"	e	enum:__anon2
+eRequestRetForeground	policy.h	/^    eRequestRetForeground,$/;"	e	enum:__anon2
+eRequestRetMax	policy.h	/^    eRequestRetMax$/;"	e	enum:__anon2
+eRequestRetNotAllow	policy.h	/^    eRequestRetNotAllow,$/;"	e	enum:__anon2
+eRequestRetResume	policy.h	/^    eRequestRetResume,$/;"	e	enum:__anon2
+eRequestRetSuspend	policy.h	/^    eRequestRetSuspend,$/;"	e	enum:__anon2
+eRequestRet_t	policy.h	/^} eRequestRet_t;$/;"	t	typeref:enum:__anon2
+eSourceStatusBackground	policy.h	/^    eSourceStatusBackground,$/;"	e	enum:__anon3
+eSourceStatusForeground	policy.h	/^    eSourceStatusForeground,$/;"	e	enum:__anon3
+eSourceStatusInit	policy.h	/^    eSourceStatusInit = 0,$/;"	e	enum:__anon3
+eSourceStatusMax	policy.h	/^    eSourceStatusMax$/;"	e	enum:__anon3
+eSourceStatusSuspend	policy.h	/^    eSourceStatusSuspend,$/;"	e	enum:__anon3
+gAudioSourcePropertyTable	policy.c	/^const tAudioSourceProperty_t gAudioSourcePropertyTable[G_AUDIO_SOURCE_TYPE_CNT] = {$/;"	v
+gAudioSourcePropertyTable	policy.h	/^const tAudioSourceProperty_t gAudioSourcePropertyTable[] = {$/;"	v
+getBackgroundClient	policy_service.cpp	/^PolicyClient* PolicyService::getBackgroundClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+getBackgroundClient	policy_service.h	/^    PolicyClient* getBackgroundClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+getForegroundClient	policy_service.cpp	/^PolicyClient* PolicyService::getForegroundClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+getForegroundClient	policy_service.h	/^    PolicyClient* getForegroundClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+getSourceName	policy_client.h	/^    const char* getSourceName(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+getSourceProperty	policy_service.cpp	/^const tAudioSourceProperty_t* getSourceProperty(eAudioSourceType_t type)$/;"	f	namespace:test_libratone	signature:(eAudioSourceType_t type)
+getSourceStatus	policy_client.h	/^    eAudioSourceStatus_t getSourceStatus(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+getSourceType	policy_client.h	/^    eAudioSourceType_t getSourceType(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+getSuspendClient	policy_service.cpp	/^PolicyClient* PolicyService::getSuspendClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+getSuspendClient	policy_service.h	/^    PolicyClient* getSuspendClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+isActiveClient	policy_service.cpp	/^bool PolicyService::isActiveClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+isActiveClient	policy_service.h	/^    bool isActiveClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+isInAllowSources	policy_service.cpp	/^bool PolicyService::isInAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInAllowSources	policy_service.h	/^    bool isInAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInBackgroundSelfSources	policy_service.cpp	/^bool PolicyService::isInBackgroundSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInBackgroundSelfSources	policy_service.h	/^    bool isInBackgroundSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInNotAllowSelfSources	policy_service.cpp	/^bool PolicyService::isInNotAllowSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInNotAllowSelfSources	policy_service.h	/^    bool isInNotAllowSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInNotAllowSources	policy_service.cpp	/^bool PolicyService::isInNotAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInNotAllowSources	policy_service.h	/^    bool isInNotAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInSuspendSelfSources	policy_service.cpp	/^bool PolicyService::isInSuspendSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInSuspendSelfSources	policy_service.h	/^    bool isInSuspendSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInSuspendSources	policy_service.cpp	/^bool PolicyService::isInSuspendSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+isInSuspendSources	policy_service.h	/^    bool isInSuspendSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+lvl	policy.h	/^    eAudioSourcePriority_t lvl;$/;"	m	struct:__anon6	access:public
+mName	policy_client.h	/^    const char* mName;$/;"	m	class:test_libratone::IPolicyClient	access:public
+mPs	policy_client.h	/^    PolicyService* mPs;$/;"	m	class:test_libratone::PolicyClient	access:private
+mSelf	policy_client.h	/^    eAudioSourceType_t mSelf;$/;"	m	class:test_libratone::IPolicyClient	access:public
+mStat	policy_client.h	/^    eAudioSourceStatus_t mStat;$/;"	m	class:test_libratone::IPolicyClient	access:public
+mVecSourceLvl	policy_service.h	/^    vector<PolicyClient*> mVecSourceLvl[eAudioSourcePriorityMax];$/;"	m	class:test_libratone::PolicyService	access:private
+main	main.cpp	/^int main(int argc, const char* argv[])$/;"	f	signature:(int argc, const char* argv[])
+notAllow	policy.h	/^    uint32_t notAllow;$/;"	m	struct:__anon6	access:public
+notAllowSelf	policy.h	/^    uint32_t notAllowSelf;$/;"	m	struct:__anon6	access:public
+notify	policy_client.cpp	/^void PolicyClient::notify(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, \\$/;"	f	class:test_libratone::PolicyClient	signature:(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, \ int ext1, int ext2, void* pri_vate)
+notify	policy_client.h	/^    virtual void notify(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, $/;"	p	class:test_libratone::IPolicyClient	access:public	signature:(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, int ext1, int ext2, void* pri_vate)
+notify	policy_client.h	/^    void notify(eRequestRet_t msg, \\$/;"	p	class:test_libratone::PolicyClient	access:public	signature:(eRequestRet_t msg, \ eAudioSourceType_t old = eAudioSourceTypeNull, \ eAudioSourceType_t now = eAudioSourceTypeNull, \ int ext1 = 0, int ext2 = 0, void* pri_vate = NULL)
+notify	policy_service.cpp	/^int PolicyService::notify(PolicyClient* client, eRequestRet_t msg, \\$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client, eRequestRet_t msg, \ eAudioSourceType_t old, eAudioSourceType_t now, \ int ext1, int ext2, void* pri_vate)
+notify	policy_service.h	/^    int notify(PolicyClient* client, eRequestRet_t msg, \\$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client, eRequestRet_t msg, \ eAudioSourceType_t old = eAudioSourceTypeNull, \ eAudioSourceType_t now = eAudioSourceTypeNull, int ext1 = 0, int ext2 = 0, void* pri_vate = NULL)
+requestAudioFinish	policy_service.cpp	/^int PolicyService::requestAudioFinish(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+requestAudioFinish	policy_service.h	/^    int requestAudioFinish(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:public	signature:(PolicyClient* client)
+requestAudioPlay	policy_service.cpp	/^int PolicyService::requestAudioPlay(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+requestAudioPlay	policy_service.h	/^    int requestAudioPlay(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:public	signature:(PolicyClient* client)
+requestFinish	policy_client.cpp	/^int PolicyClient::requestFinish()$/;"	f	class:test_libratone::PolicyClient	signature:()
+requestFinish	policy_client.h	/^    int requestFinish();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
+requestStart	policy_client.cpp	/^int PolicyClient::requestStart()$/;"	f	class:test_libratone::PolicyClient	signature:()
+requestStart	policy_client.h	/^    int requestStart();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
+self	policy.h	/^    eAudioSourceType_t self;$/;"	m	struct:__anon6	access:public
+setPs	policy_client.h	/^    void setPs(PolicyService* ps){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:(PolicyService* ps)
+setSourceStatus	policy_client.h	/^    void setSourceStatus(eAudioSourceStatus_t st){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:(eAudioSourceStatus_t st)
+suspend	policy.h	/^    uint32_t suspend;$/;"	m	struct:__anon6	access:public
+suspendSelf	policy.h	/^    uint32_t suspendSelf;$/;"	m	struct:__anon6	access:public
+tAudioSourceProperty_t	policy.h	/^} tAudioSourceProperty_t;$/;"	t	typeref:struct:__anon6
+target	Makefile	/^target=policy_test$/;"	m
+test_libratone	policy_client.cpp	/^namespace test_libratone{$/;"	n	file:
+test_libratone	policy_client.h	/^namespace test_libratone$/;"	n
+test_libratone	policy_service.cpp	/^namespace test_libratone$/;"	n	file:
+test_libratone	policy_service.h	/^namespace test_libratone$/;"	n
+test_libratone::IPolicyClient	policy_client.h	/^class IPolicyClient$/;"	c	namespace:test_libratone
+test_libratone::IPolicyClient::mName	policy_client.h	/^    const char* mName;$/;"	m	class:test_libratone::IPolicyClient	access:public
+test_libratone::IPolicyClient::mSelf	policy_client.h	/^    eAudioSourceType_t mSelf;$/;"	m	class:test_libratone::IPolicyClient	access:public
+test_libratone::IPolicyClient::mStat	policy_client.h	/^    eAudioSourceStatus_t mStat;$/;"	m	class:test_libratone::IPolicyClient	access:public
+test_libratone::IPolicyClient::notify	policy_client.h	/^    virtual void notify(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, $/;"	p	class:test_libratone::IPolicyClient	access:public	signature:(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, int ext1, int ext2, void* pri_vate)
+test_libratone::IPolicyClient::~IPolicyClient	policy_client.h	/^    virtual ~IPolicyClient() {}$/;"	f	class:test_libratone::IPolicyClient	access:public	signature:()
+test_libratone::PolicyClient	policy_client.h	/^class PolicyClient: public IPolicyClient$/;"	c	namespace:test_libratone	inherits:IPolicyClient
+test_libratone::PolicyClient::PolicyClient	policy_client.cpp	/^PolicyClient::PolicyClient(const char* name, eAudioSourceType_t source)$/;"	f	class:test_libratone::PolicyClient	signature:(const char* name, eAudioSourceType_t source)
+test_libratone::PolicyClient::PolicyClient	policy_client.h	/^    PolicyClient(const char* name, eAudioSourceType_t source);$/;"	p	class:test_libratone::PolicyClient	access:public	signature:(const char* name, eAudioSourceType_t source)
+test_libratone::PolicyClient::getSourceName	policy_client.h	/^    const char* getSourceName(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyClient::getSourceStatus	policy_client.h	/^    eAudioSourceStatus_t getSourceStatus(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyClient::getSourceType	policy_client.h	/^    eAudioSourceType_t getSourceType(){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyClient::mPs	policy_client.h	/^    PolicyService* mPs;$/;"	m	class:test_libratone::PolicyClient	access:private
+test_libratone::PolicyClient::notify	policy_client.cpp	/^void PolicyClient::notify(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, \\$/;"	f	class:test_libratone::PolicyClient	signature:(eRequestRet_t msg, eAudioSourceType_t old, eAudioSourceType_t now, \ int ext1, int ext2, void* pri_vate)
+test_libratone::PolicyClient::notify	policy_client.h	/^    void notify(eRequestRet_t msg, \\$/;"	p	class:test_libratone::PolicyClient	access:public	signature:(eRequestRet_t msg, \ eAudioSourceType_t old = eAudioSourceTypeNull, \ eAudioSourceType_t now = eAudioSourceTypeNull, \ int ext1 = 0, int ext2 = 0, void* pri_vate = NULL)
+test_libratone::PolicyClient::requestFinish	policy_client.cpp	/^int PolicyClient::requestFinish()$/;"	f	class:test_libratone::PolicyClient	signature:()
+test_libratone::PolicyClient::requestFinish	policy_client.h	/^    int requestFinish();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyClient::requestStart	policy_client.cpp	/^int PolicyClient::requestStart()$/;"	f	class:test_libratone::PolicyClient	signature:()
+test_libratone::PolicyClient::requestStart	policy_client.h	/^    int requestStart();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyClient::setPs	policy_client.h	/^    void setPs(PolicyService* ps){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:(PolicyService* ps)
+test_libratone::PolicyClient::setSourceStatus	policy_client.h	/^    void setSourceStatus(eAudioSourceStatus_t st){$/;"	f	class:test_libratone::PolicyClient	access:public	signature:(eAudioSourceStatus_t st)
+test_libratone::PolicyClient::~PolicyClient	policy_client.cpp	/^PolicyClient::~PolicyClient()$/;"	f	class:test_libratone::PolicyClient	signature:()
+test_libratone::PolicyClient::~PolicyClient	policy_client.h	/^    ~PolicyClient();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
+test_libratone::PolicyService	policy_service.h	/^class PolicyService$/;"	c	namespace:test_libratone
+test_libratone::PolicyService::PolicyService	policy_service.cpp	/^PolicyService::PolicyService()$/;"	f	class:test_libratone::PolicyService	signature:()
+test_libratone::PolicyService::PolicyService	policy_service.h	/^    PolicyService();$/;"	p	class:test_libratone::PolicyService	access:public	signature:()
+test_libratone::PolicyService::checkAddClient	policy_service.cpp	/^int PolicyService::checkAddClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+test_libratone::PolicyService::checkAddClient	policy_service.h	/^    int checkAddClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+test_libratone::PolicyService::checkRemoveClient	policy_service.cpp	/^int PolicyService::checkRemoveClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+test_libratone::PolicyService::checkRemoveClient	policy_service.h	/^    int checkRemoveClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+test_libratone::PolicyService::compareSources	policy_service.cpp	/^bool PolicyService::compareSources(PolicyClient* foreground, PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* foreground, PolicyClient* client)
+test_libratone::PolicyService::compareSources	policy_service.h	/^    int compareSources(PolicyClient* foreground, PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* foreground, PolicyClient* client)
+test_libratone::PolicyService::getBackgroundClient	policy_service.cpp	/^PolicyClient* PolicyService::getBackgroundClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+test_libratone::PolicyService::getBackgroundClient	policy_service.h	/^    PolicyClient* getBackgroundClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+test_libratone::PolicyService::getForegroundClient	policy_service.cpp	/^PolicyClient* PolicyService::getForegroundClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+test_libratone::PolicyService::getForegroundClient	policy_service.h	/^    PolicyClient* getForegroundClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+test_libratone::PolicyService::getSuspendClient	policy_service.cpp	/^PolicyClient* PolicyService::getSuspendClient()$/;"	f	class:test_libratone::PolicyService	signature:()
+test_libratone::PolicyService::getSuspendClient	policy_service.h	/^    PolicyClient* getSuspendClient();$/;"	p	class:test_libratone::PolicyService	access:private	signature:()
+test_libratone::PolicyService::isActiveClient	policy_service.cpp	/^bool PolicyService::isActiveClient(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+test_libratone::PolicyService::isActiveClient	policy_service.h	/^    bool isActiveClient(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client)
+test_libratone::PolicyService::isInAllowSources	policy_service.cpp	/^bool PolicyService::isInAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInAllowSources	policy_service.h	/^    bool isInAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInBackgroundSelfSources	policy_service.cpp	/^bool PolicyService::isInBackgroundSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInBackgroundSelfSources	policy_service.h	/^    bool isInBackgroundSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInNotAllowSelfSources	policy_service.cpp	/^bool PolicyService::isInNotAllowSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInNotAllowSelfSources	policy_service.h	/^    bool isInNotAllowSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInNotAllowSources	policy_service.cpp	/^bool PolicyService::isInNotAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInNotAllowSources	policy_service.h	/^    bool isInNotAllowSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInSuspendSelfSources	policy_service.cpp	/^bool PolicyService::isInSuspendSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInSuspendSelfSources	policy_service.h	/^    bool isInSuspendSelfSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInSuspendSources	policy_service.cpp	/^bool PolicyService::isInSuspendSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)$/;"	f	class:test_libratone::PolicyService	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::isInSuspendSources	policy_service.h	/^    bool isInSuspendSources(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type);$/;"	p	class:test_libratone::PolicyService	access:private	signature:(const tAudioSourceProperty_t* cur_asp, eAudioSourceType_t type)
+test_libratone::PolicyService::mVecSourceLvl	policy_service.h	/^    vector<PolicyClient*> mVecSourceLvl[eAudioSourcePriorityMax];$/;"	m	class:test_libratone::PolicyService	access:private
+test_libratone::PolicyService::notify	policy_service.cpp	/^int PolicyService::notify(PolicyClient* client, eRequestRet_t msg, \\$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client, eRequestRet_t msg, \ eAudioSourceType_t old, eAudioSourceType_t now, \ int ext1, int ext2, void* pri_vate)
+test_libratone::PolicyService::notify	policy_service.h	/^    int notify(PolicyClient* client, eRequestRet_t msg, \\$/;"	p	class:test_libratone::PolicyService	access:private	signature:(PolicyClient* client, eRequestRet_t msg, \ eAudioSourceType_t old = eAudioSourceTypeNull, \ eAudioSourceType_t now = eAudioSourceTypeNull, int ext1 = 0, int ext2 = 0, void* pri_vate = NULL)
+test_libratone::PolicyService::requestAudioFinish	policy_service.cpp	/^int PolicyService::requestAudioFinish(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+test_libratone::PolicyService::requestAudioFinish	policy_service.h	/^    int requestAudioFinish(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:public	signature:(PolicyClient* client)
+test_libratone::PolicyService::requestAudioPlay	policy_service.cpp	/^int PolicyService::requestAudioPlay(PolicyClient* client)$/;"	f	class:test_libratone::PolicyService	signature:(PolicyClient* client)
+test_libratone::PolicyService::requestAudioPlay	policy_service.h	/^    int requestAudioPlay(PolicyClient* client);$/;"	p	class:test_libratone::PolicyService	access:public	signature:(PolicyClient* client)
+test_libratone::getSourceProperty	policy_service.cpp	/^const tAudioSourceProperty_t* getSourceProperty(eAudioSourceType_t type)$/;"	f	namespace:test_libratone	signature:(eAudioSourceType_t type)
+~IPolicyClient	policy_client.h	/^    virtual ~IPolicyClient() {}$/;"	f	class:test_libratone::IPolicyClient	access:public	signature:()
+~PolicyClient	policy_client.cpp	/^PolicyClient::~PolicyClient()$/;"	f	class:test_libratone::PolicyClient	signature:()
+~PolicyClient	policy_client.h	/^    ~PolicyClient();$/;"	p	class:test_libratone::PolicyClient	access:public	signature:()
